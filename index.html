@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Surprise!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe0ec, #e0f7ff);
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    .main-heading {
+      text-align: center;
+      font-size: 50px;
+      color: #6a0dad;
+      text-shadow: 2px 2px 10px #ff66cc;
+      animation: bounce 1s infinite alternate;
+      margin-top: 10px;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff4081;
+    }
+
+    .typewriter {
+      font-size: 22px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid pink;
+      width: 0;
+      animation: typing 5s steps(40, end) forwards;
+      margin: 20px auto;
+      color: 			#00008B;
+      max-width: 90%;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .section {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .card-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      width: 200px;
+      height: 220px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .hidden-content {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .gallery img {
+      width: 150px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .confetti {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    marquee {
+      font-size: 24px;
+      color: blue;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Start music on first click -->
+  <script>
+    document.addEventListener('click', function startMusic() {
+      const music = document.getElementById('bg-music');
+      if (music.paused) {
+        music.play().catch(error => console.log("Autoplay error:", error));
+      }
+      document.removeEventListener('click', startMusic);
+    });
+  </script>
+
+  <h1 class="main-heading">Happy Birthday RISHI!</h1>
+  <div class="typewriter">Today is all about you... Let’s start your birthday adventure! 💖</div>
+
+  <div class="section">
+    <h2>Choose a Surprise!</h2>
+    <div class="card-grid">
+      <div class="card" onclick="showContent('letter')">
+        <img src="readletter.webp" alt="Read Letter"/>
+        <span>Read a Secret Letter</span>
+      </div>
+      <div class="card" onclick="showContent('gallery')">
+        <img src="RISHIPIC.jpg" alt="Gallery"/>
+        <span>Memory Gallery</span>
+      </div>
+      <div class="card" onclick="showContent('reasons')">
+        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Reasons"/>
+        <span>Why You’re Amazing</span>
+      </div>
+      <div class="card" onclick="showContent('quiz')">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Quiz"/>
+        <span>Mini Quiz</span>
+      </div>
+      <div class="card" onclick="showContent('voice')">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727269.png" alt="Voice"/>
+        <span>Voice Messages</span>
+      </div>
+      <div class="card" onclick="showContent('video')">
+        <img src="https://cdn-icons-png.flaticon.com/512/1161/1161714.png" alt="Video"/>
+        <span>Special Videos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Surprise Sections Below -->
+ <div id="letter" class="hidden-content">
+  <h2>Read a Secret Letter</h2>
+
+  <!-- Centered Image -->
+  <div style="text-align: center;">
+    <img src="readletter1.jpg" alt="Secret Letter Image" style="width: 100%; max-width: 400px; border-radius: 10px; margin: 10px 0;">
+  </div>
+
+  <p>My dear friend rishi hope you may like this and You bring so much light into the lives of those around you. I'm truly lucky to call you my friend. Here's to many more laughs, memories and fights.<br><br>
+      With all my heart,<br>
+      Your Reflection
+    </p> 
+</div>
+
+
+
+  <div id="gallery" class="hidden-content">
+    <h2>Memory Gallery</h2>
+    <div class="gallery">
+      <img src="siri2.jpg" alt="Memory 1"/>
+      <img src="siri5.jpg" alt="Memory 2"/>
+      <img src="siri4.jpg" alt="Memory 3"/>
+      <img src="siri3.jpg" alt="Memory 4"/>
+      <img src="siri1.jpg" alt="Memory 5"/>
+      <img src="rishi9.jpg" alt="Memory 6"/>
+      <img src="rishi7.jpg" alt="Memory 7"/>
+      <img src="rishi10.jpg" alt="Memory 8"/>
+      <img src="rishi11.jpg" alt="Memory 8"/>
+    </div>
+  </div>
+
+  <div id="reasons" class="hidden-content">
+    <h2>💖 Reasons You're Amazing</h2>
+    <ul style="text-align:left; max-width: 500px; margin: auto;">
+      <li>You always know how to make me smile.</li>
+      <li> I fell more comfortable  when i was with you what ever the situation.</li>
+      <li> You're incredibly smart and thoughtful.</li>
+      <li> Your memes are legendary (Car lo untadhi seat belt ninnu chusthea naa heart melt).</li>
+      <li> You're simply one of a kind!</li>
+      <li> Always ready to push me when I feel low.</li>
+    </ul>
+  </div>
+
+  <div id="quiz" class="hidden-content">
+    <h2> How well do you know me?</h2>
+    <form id="quizForm">
+      <p><b>Where did we first meet?</b></p>
+      <label><input type="radio" name="First Meet" value="School" required> School</label><br>
+      <label><input type="radio" name="First Meet" value="College"> College</label><br>
+      <label><input type="radio" name="First Meet" value="Online class"> Online class</label><br>
+      <label><input type="radio" name="First Meet" value="Function"> Function</label><br>
+      <label><input type="radio" name="First Meet" value="School Reception ">School Reception</label><br>
+
+      <p><b>My favorite food is?</b></p>
+      <label><input type="radio" name="Fav Food" value="pappu annam" required> pappu annam</label><br>
+      <label><input type="radio" name="Fav Food" value="Panipuri"> Panipuri</label><br>
+      <label><input type="radio" name="Fav Food" value="Ice Cream"> Ice Cream</label><br>
+      <label><input type="radio" name="Fav Food" value="Brinjal"> Brinjal</label><br>
+      <label><input type="radio" name="Fav Food" value="Egg"> Egg</label><br>
+
+      <p><b>Which emoji reminds me of you the most?</b></p>
+      <label><input type="radio" name="Emoji Reminder" value="😂" required> 😂 – Always laughing</label><br>
+      <label><input type="radio" name="Emoji Reminder" value="🤗"> 🤗 – Warm and caring</label><br>
+      <label><input type="radio" name="Emoji Reminder" value="🐒"> 🐒 – Playful and silly</label><br>
+      <label><input type="radio" name="Emoji Reminder" value="🥰"> 🥰 – Sweet and lovable</label><br>
+      <label><input type="radio" name="Emoji Reminder" value="🔥"> 🔥 – Energetic and bold</label><br>
+      <label><input type="radio" name="Emoji Reminder" value="😎" required> 😎 – Cool and confident</label><br>
+
+      <p><b>What kind of friend am I to you?</b></p>
+      <label><input type="radio" name="Friend Type" value="Always there for me" required> Always there for me</label><br>
+      <label><input type="radio" name="Friend Type" value="Best adviser"> Best adviser</label><br>
+      <label><input type="radio" name="Friend Type" value="Mood booster"> Mood booster</label><br>
+      <label><input type="radio" name="Friend Type" value="Little crazy but cute "> Little crazy but cute </label><br>
+      <label><input type="radio" name="Friend Type" value="My emergency contact " required> My emergency contact </label><br>
+      <label><input type="radio" name="Friend Type" value="My brain’s missing piece "> My brain’s missing piece </label><br>
+      <label><input type="radio" name="Friend Type" value="The calm to my chaos "> The calm to my chaos </label><br>
+      <label><input type="radio" name="Friend Type" value="Laugh partner forever "> Laugh partner forever </label><br>
+      <label><input type="radio" name="Friend Type" value="The real one. Always "> The real one. Always </label><br>
+      <label><input type="radio" name="Friend Type" value="Lowkey soulmate "> Lowkey soulmate </label><br>
+
+      <p><b>What do I do when I’m sad?</b></p>
+      <label><input type="radio" name="When Sad" value="Cry" required> Cry</label><br>
+      <label><input type="radio" name="When Sad" value="Text you"> Text you</label><br>
+      <label><input type="radio" name="When Sad" value="Sleep"> Sleep</label><br>
+      <label><input type="radio" name="When Sad" value="Listen to music"> Listen to music</label><br>
+      <label><input type="radio" name="When Sad" value="Write  a letter and reduce my stress levels"> Write a letter and reduce my stress levels</label><br>
+      <label><input type="radio" name="When Sad" value="Meditation"> Meditation</label><br>
+
+      <p><b>What is my favorite memory with you?</b></p>
+      <label><input type="radio" name="Fav Memory" value="Our first call" required> Our first call</label><br>
+      <label><input type="radio" name="Fav Memory" value="That random late-night chat and talks"> That random late-night chat</label><br>
+      <label><input type="radio" name="Fav Memory" value="Group hangout"> Group hangout</label><br>
+      <label><input type="radio" name="Fav Memory" value="Your surprise message"> Your surprise message</label><br>
+      <p><b>Did you hide anything from me?</b></p>
+      <textarea name="Message from You" rows="5" cols="50" placeholder="tell that secret....😊" required></textarea><br><br>
+      <p><b>Write something about me!</b></p>
+      <textarea name="Message from You" rows="5" cols="50" placeholder="Say anything you feel... 😊" required></textarea><br><br>  
+      <button type="submit">Submit Answers</button>
+    </form>
+  </div>
+
+
+  <div id="voice" class="hidden-content">
+    <h2>Voice Messages for You</h2>
+    <audio controls>
+      <source src="sirimsg.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+      <source src="suguna.mp3" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+  <audio controls>
+      <source src="mohana.opus" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+   <audio controls>
+      <source src="shali.mp3" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+
+  </div>
+
+  <div id="video" class="hidden-content" style="width: 80%; max-width: 80%; padding: 5px; box-sizing: border-box;">
+  <h2>Special Video Moments</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; justify-items: center;">
+    <video width="320" height="240" controls>
+      <source src="megha.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video width="320" height="240" controls>
+      <source src="noshivideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video width="320" height="240" controls>
+      <source src="sirivideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video width="320" height="240" controls>
+      <source src="gauthu.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
+  <!-- Confetti Canvas -->
+  <canvas class="confetti" id="confetti-canvas"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function showContent(id) {
+      const sections = document.querySelectorAll('.hidden-content');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      confettiEffect();
+
+      const music = document.getElementById('bg-music');
+      if (['letter', 'gallery', 'reasons', 'quiz'].includes(id)) {
+        if (music.paused) music.play().catch(err => {});
+      } else {
+        if (!music.paused) music.pause();
+      }
+    }
+
+    function confettiEffect() {
+      const confettiCanvas = document.getElementById('confetti-canvas');
+      confetti.create(confettiCanvas, {
+        resize: true,
+        useWorker: true
+      })({ particleCount: 100, spread: 160 });
+    }
+
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      window.location.href = "thankyou.html";
+    });
+  </script>
+
+  <marquee direction="right" style="color: blue;">Rishi</marquee>
+</body>
+</html>
